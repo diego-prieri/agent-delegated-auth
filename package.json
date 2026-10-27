@@ -1,0 +1,34 @@
+{
+  "name": "agent-delegated-auth",
+  "version": "0.1.0",
+  "description": "Reference implementation: an MCP server (AI agent) that acts on behalf of a user via OAuth 2.0 Token Exchange (RFC 8693), never with more access than that user.",
+  "type": "module",
+  "bin": {
+    "agent-delegated-auth": "dist/index.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "typecheck": "tsc --noEmit",
+    "test": "node --import tsx --test test/*.test.ts",
+    "demo": "tsx src/demo.ts",
+    "dev": "tsx src/index.ts",
+    "inspect": "npx @modelcontextprotocol/inspector tsx src/index.ts"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.32.2",
+    "jose": "^6.1.0",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "tsx": "^4.20.0",
+    "typescript": "^5.9.3"
+  }
+}
